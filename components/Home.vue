@@ -1,5 +1,5 @@
 <template>
-  <div class="landing">
+  <div class="home">
     <div class="title-wrapper">
       <div class="title" :class="$mq">
         DANIEL TAN
@@ -13,18 +13,12 @@
     </div>
     <div class="heart"></div>
     <img src="~/assets/img/home.png" alt="home" class="home-img"/>
-    <NavBar></NavBar>
   </div>
 </template>
 
 <script>
-import NavBar from '~/components/NavBar'
-
 export default {
-  name: 'Landing',
-  components: {
-    NavBar
-  },
+  name: 'Home',
   data () {
     return {
       interval: null
@@ -32,8 +26,11 @@ export default {
   },
   mounted () {
     this.interval = setInterval(() => {
-      document.getElementsByClassName('landing')[0].style.backgroundColor = 'rgba(' + this.createColor() + ',.4)'
+      document.getElementsByClassName('home')[0].style.backgroundColor = 'rgba(' + this.createColor() + ',.4)'
     }, 500)
+  },
+  beforeDestroy () {
+    clearInterval(this.interval)
   },
   methods: {
     contactMe () {
@@ -47,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .landing {
+  .home {
     min-height: 800px;
     height: 100vh;
     position: relative;
