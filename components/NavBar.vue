@@ -1,11 +1,21 @@
 <template>
   <nav>
     <ul>
-      <li>Home</li>
-      <li>About me</li>
-      <li>Portfolio</li>
-      <li>Blog</li>
-      <li>Contact me</li>
+      <li :class="{ active: isHomeActive }" @click="goTo('/')">
+        HOME
+      </li>
+      <li :class="{ active: isAboutActive }" @click="goTo('/about')">
+        ABOUT
+      </li>
+      <li :class="{ active: isWorksActive }" @click="goTo('/works')">
+        WORKS
+      </li>
+      <li :class="{ active: isBlogActive }" @click="goTo('/blog')">
+        BLOG
+      </li>
+      <li :class="{ active: isContactActive }" @click="goTo('/contact')">
+        CONTACT ME
+      </li>
       <li class="slide"></li>
     </ul>
   </nav>
@@ -13,7 +23,32 @@
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  computed: {
+    activeTab () {
+      return this.$route.path
+    },
+    isHomeActive () {
+      return this.activeTab === '/'
+    },
+    isAboutActive () {
+      return this.activeTab === '/about'
+    },
+    isWorksActive () {
+      return this.activeTab === '/works'
+    },
+    isBlogActive () {
+      return this.activeTab === '/blog'
+    },
+    isContactActive () {
+      return this.activeTab === '/contact'
+    }
+  },
+  methods: {
+    goTo (path) {
+      this.$router.push(path)
+    }
+  }
 }
 </script>
 

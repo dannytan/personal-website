@@ -1,8 +1,19 @@
 <template>
   <div>
     <nuxt />
+    <NavBar></NavBar>
   </div>
 </template>
+
+<script>
+import NavBar from '~/components/NavBar'
+
+export default {
+  components: {
+    NavBar
+  }
+}
+</script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
