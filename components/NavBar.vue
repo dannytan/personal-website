@@ -21,11 +21,12 @@ export default {
   nav {
     z-index: 2;
     width: 100%;
-    background-color: #0b0b0b;
+    background-color: #fff;
     position: fixed;
     bottom: 0;
     height: 80px;
     overflow: hidden;
+    box-shadow: 0 0 9px 2px rgba(41 ,41, 41, 0.2);
   }
   nav ul {
     position: absolute;
@@ -44,7 +45,7 @@ export default {
     line-height: 80px;
     width: 20vw;
     text-align: center;
-    color: #555;
+    color: black;
     transition: background-color 0.5s 0.2s ease, color 0.3s ease;
     cursor: pointer;
     font-size: 12px;
@@ -54,8 +55,8 @@ export default {
     transform: translateY(100%);
   }
   nav li.active {
-    background-color: #151515;
-    color: #efefef;
+    // background-color: #151515;
+    color: tomato;
   }
   nav li.active::after {
     content: "";
@@ -64,7 +65,7 @@ export default {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #f7ca18;
+    background-color: tomato;
   }
   nav li:nth-child(1) {
     animation: pop 0.5s 0.15s 1 forwards;
@@ -88,7 +89,7 @@ export default {
     animation: pop 0.5s 1.05s 1 forwards;
   }
   nav li:hover {
-    color: #ececec;
+    color: tomato;
   }
   nav li:active {
     background-color: #222;
@@ -118,10 +119,10 @@ export default {
     position: absolute;
     left: -20vw;
     top: 0;
-    background-color: #fff;
+    background-color: tomato;
     z-index: -1;
-    height: 2px;
-    margin-top: 78px;
+    height: 3px;
+    margin-top: 77px;
     transition: left 0.3s ease;
     transform: translateY(0);
   }
