@@ -1,49 +1,20 @@
 <template>
   <div class="container">
-    <div>
-      <h1 class="title">
-        Danny Tan
-      </h1>
-      <h2 class="subtitle">
-        Software Engineer
-      </h2>
-    </div>
+    <Home></Home>
   </div>
 </template>
 
 <script>
+import Home from '~/components/Home'
 export default {
-  name: 'Home'
+  components: {
+    Home
+  }
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  margin: 0;
 }
 </style>
