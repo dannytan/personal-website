@@ -7,8 +7,8 @@
       <div class="sub-title">
         Developer // Drummer
       </div>
-      <el-button class="enter-button">
-        ENTER
+      <el-button class="enter-button" @click="contactMe">
+        CONTACT ME
       </el-button>
     </div>
     <div class="heart"></div>
@@ -36,6 +36,9 @@ export default {
     }, 500)
   },
   methods: {
+    contactMe () {
+      window.location.href = 'mailto:dantan808@gmail.com'
+    },
     createColor () {
       return Math.round(245 * Math.random()) + ', ' + Math.round(245 * Math.random()) + ', ' + Math.round(245 * Math.random())
     }
@@ -66,7 +69,6 @@ export default {
       }
       .enter-button {
         margin-top: 15px;
-        font-size: 20px;
         font-weight: bold;
         background: transparent;
         color: rgba(255, 255, 255, 0.8);
