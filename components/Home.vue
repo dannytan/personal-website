@@ -1,5 +1,11 @@
 <template>
   <div class="home">
+    <div class="title-wrapper">
+      <div class="name-text">DANIEL TAN</div>
+      <el-button class="enter-button">
+        ENTER
+      </el-button>
+    </div>
     <div class="heart"></div>
     <img src="~/assets/img/home.png" alt="home" class="home-img"/>
   </div>
@@ -30,7 +36,6 @@ export default {
   .home {
     min-height: 600px;
     height: 100vh;
-    display: flex;
     background: rgba(155, 89, 182, 0.4);
     .title {
       display: block;
@@ -39,6 +44,26 @@ export default {
       color: #35495e;
       letter-spacing: 1px;
       margin-top: 50px;
+    }
+    .title-wrapper {
+      text-align: center;
+      padding-top: 120px;
+      .name-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 60px;
+      }
+      .enter-button {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        &:hover {
+          color: tomato;
+          background: rgba(255, 255, 255, 0.8);
+        }
+      }
     }
     .heart {
       z-index: 1;
