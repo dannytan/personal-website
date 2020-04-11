@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <Home></Home>
+    <Landing></Landing>
   </div>
 </template>
 
 <script>
-import Home from '~/components/Home'
+import Landing from '~/components/Landing'
 export default {
   components: {
-    Home
+    Landing
   }
 }
 </script>

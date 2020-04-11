@@ -1,7 +1,12 @@
 <template>
-  <div class="home">
+  <div class="landing">
     <div class="title-wrapper">
-      <div class="name-text">DANIEL TAN</div>
+      <div class="title" :class="$mq">
+        DANIEL TAN
+      </div>
+      <div class="sub-title">
+        Full-Stack Developer
+      </div>
       <el-button class="enter-button">
         ENTER
       </el-button>
@@ -13,7 +18,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Landing',
   data () {
     return {
       interval: null
@@ -21,7 +26,7 @@ export default {
   },
   mounted () {
     this.interval = setInterval(() => {
-      document.getElementsByClassName('home')[0].style.backgroundColor = 'rgba(' + this.createColor() + ',.4)'
+      document.getElementsByClassName('landing')[0].style.backgroundColor = 'rgba(' + this.createColor() + ',.4)'
     }, 500)
   },
   methods: {
@@ -33,24 +38,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home {
-    min-height: 600px;
+  .landing {
+    min-height: 800px;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     background: rgba(155, 89, 182, 0.4);
-    .title {
-      display: block;
-      font-weight: 300;
-      font-size: 100px;
-      color: #35495e;
-      letter-spacing: 1px;
-      margin-top: 50px;
-    }
     .title-wrapper {
       text-align: center;
       padding-top: 120px;
-      .name-text {
+      .title {
         color: rgba(255, 255, 255, 0.8);
-        font-size: 60px;
+        font-size: 64px;
+        &.xs {
+          font-size: 42px;
+        }
+      }
+      .sub-title {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 22px;
       }
       .enter-button {
         margin-top: 10px;
@@ -102,8 +108,7 @@ export default {
       bottom: 0;
       left: 50%;
       margin-left: -425px;
-      //min-height: 400px;
-      //height: 80%;
+      margin-bottom: -7px;
       width: 850px;
     }
 
