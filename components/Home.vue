@@ -62,7 +62,7 @@ export default {
       }
       .sub-title {
         color: rgba(255, 255, 255, 0.8);
-        font-size: 22px;
+        font-size: 24px;
       }
       .enter-button {
         margin-top: 15px;
