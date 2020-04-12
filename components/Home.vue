@@ -12,7 +12,7 @@
       </el-button>
     </div>
     <div class="heart"></div>
-    <img src="~/assets/img/home.png" alt="home" class="home-img"/>
+    <img src="~/assets/img/home.png" alt="home" class="home-img" :class="$mq"/>
   </div>
 </template>
 
@@ -115,6 +115,9 @@ export default {
       margin-left: -375px;
       margin-bottom: -7px;
       width: 750px;
+      &.xs {
+        bottom: 60px;
+      }
     }
 
     @keyframes grow{

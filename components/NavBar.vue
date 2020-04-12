@@ -1,20 +1,25 @@
 <template>
-  <nav>
+  <nav :class="$mq">
     <ul>
       <li :class="{ active: isHomeActive }" @click="goTo('/')">
-        HOME
+        <i v-if="isMobile" class="el-icon-house"></i>
+        <span v-else>HOME</span>
       </li>
       <li :class="{ active: isAboutActive }" @click="goTo('/about')">
-        ABOUT
+        <i v-if="isMobile" class="el-icon-user"></i>
+        <span v-else>ABOUT</span>
       </li>
       <li :class="{ active: isWorksActive }" @click="goTo('/works')">
-        WORKS
+        <i v-if="isMobile" class="el-icon-suitcase"></i>
+        <span v-else>WORKS</span>
       </li>
       <li :class="{ active: isBlogActive }" @click="goTo('/blog')">
-        BLOG
+        <i v-if="isMobile" class="el-icon-edit-outline"></i>
+        <span v-else>BLOG</span>
       </li>
       <li :class="{ active: isContactActive }" @click="goTo('/contact')">
-        CONTACT ME
+        <i v-if="isMobile" class="el-icon-message"></i>
+        <span v-else>CONTACT ME</span>
       </li>
       <li class="slide"></li>
     </ul>
@@ -25,6 +30,9 @@
 export default {
   name: 'NavBar',
   computed: {
+    isMobile () {
+      return this.$mq === 'xs'
+    },
     activeTab () {
       return this.$route.path
     },
@@ -62,6 +70,14 @@ export default {
     height: 80px;
     overflow: hidden;
     box-shadow: 0 0 9px 2px rgba(41 ,41, 41, 0.2);
+    &.xs {
+      height: 60px;
+      li {
+        height: 58px;
+        line-height: 60px;
+        font-size: 24px;
+      }
+    }
   }
   nav ul {
     position: absolute;
@@ -127,7 +143,7 @@ export default {
     color: tomato;
   }
   nav li:active {
-    background-color: #222;
+    background-color: #fff;
   }
   nav li:nth-child(1):hover ~ .slide {
     left: 0;
