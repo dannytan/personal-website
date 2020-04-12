@@ -11,6 +11,11 @@ import NavBar from '~/components/NavBar'
 export default {
   components: {
     NavBar
+  },
+  head () {
+    return {
+      title: 'Daniel Tan'
+    }
   }
 }
 </script>
