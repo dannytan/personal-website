@@ -15,7 +15,7 @@ $ npm run dev
 $ npm run generate
 ```
 
-For this project, I used Nuxt, a progressive framework based on Vue.js.  For more information and detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+For this project, I used Nuxt, a progressive framework based on Vue.js.  For more information and detailed explanation on how things work, check out the [Nuxt.js docs](https://nuxtjs.org).
 
 Hosted on AWS using S3 (Simple Storage Service) and CloudFront (CDN). And Jenkins for automated deployments!
 
