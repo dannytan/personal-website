@@ -1,19 +1,32 @@
 <template>
   <div class="works">
-    Coming soon!
+    <PageTitle
+      title="Works"
+      background-color="#70D6FF"
+      box-shadow-color="rgba(112, 214, 255, 0.4)"
+      font-color="#fff"
+    ></PageTitle>
+    <h1>Coming soon!</h1>
   </div>
 </template>
 
 <script>
+import PageTitle from '~/components/PageTitle'
+
 export default {
-  name: 'Works'
+  name: 'Works',
+  components: {
+    PageTitle
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .works {
+  margin: 40px 15% 80px 15%;
   text-align: center;
-  font-size: 52px;
-  margin-top: 10%;
+  h1 {
+    margin-top: 30px;
+  }
 }
 </style>

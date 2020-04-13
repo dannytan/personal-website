@@ -1,6 +1,11 @@
 <template>
   <div class="about" :class="$mq">
-    <PageTitle title="About Dan"></PageTitle>
+    <PageTitle
+      title="About Dan"
+      background-color="#FF5475"
+      box-shadow-color="rgba(255, 84, 117, 0.4)"
+      font-color="#fff"
+    ></PageTitle>
     <div class="page-section">
       <div class="about-text">
         Daniel is a <b>full-stack software developer</b> based out of <b>Honolulu, HI</b> with a strong foundation in engineering principles across multiple platforms and technologies.  He has a passion for writing, testing, debugging code, and designing user interfaces. Daniel is self-driven and able to quickly learn and master new technologies, while being successful in both team and independent environments.<br/>
@@ -30,7 +35,7 @@ export default {
   .page-section {
     padding: 30px 10px;
     overflow-y: scroll;
-    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
     -ms-overflow-style: none;
     .bio-image-1 {
       margin-top: 40px;
