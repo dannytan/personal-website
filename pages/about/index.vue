@@ -30,7 +30,7 @@ export default {
   .page-section {
     padding: 30px 10px;
     overflow-y: scroll;
-    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
     -ms-overflow-style: none;
     .bio-image-1 {
       margin-top: 40px;
