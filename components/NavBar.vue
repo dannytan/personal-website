@@ -172,8 +172,8 @@ export default {
     top: 0;
     background-color: tomato;
     z-index: -1;
-    height: 3px;
-    margin-top: 77px;
+    height: 2px;
+    margin-top: 78px;
     transition: left 0.3s ease;
     transform: translateY(0);
   }
