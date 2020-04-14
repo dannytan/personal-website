@@ -1,6 +1,6 @@
 <template>
   <div class="splash-screen">
-    <img id="shaka-splash" src="../assets/img/shaka-emoji.png" alt="Shaka Emoji">
+    <img id="shaka-splash" :class="$mq" src="../assets/img/shaka-emoji.png" alt="Shaka Emoji">
   </div>
 </template>
 
@@ -31,6 +31,10 @@ export default {
     width: var(--size);
 
     animation: wiggle 1s, zoom-in 2s /*infinite*/;
+
+    &.xs {
+      animation: wiggle 1s, zoom-in-xs 2s /*infinite*/;
+    }
   }
 
   @keyframes zoom-in {
@@ -44,6 +48,19 @@ export default {
       width: 400%;
     }
   }
+
+  @keyframes zoom-in-xs {
+    50% {
+      width: var(--size);
+    }
+    60% {
+      width: calc(var(--size) * 0.8);
+    }
+    100% {
+      width: 800%;
+    }
+  }
+
   @keyframes fade-out {
     0%, 85% {
       opacity: 1;
