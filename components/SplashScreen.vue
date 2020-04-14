@@ -19,19 +19,18 @@ export default {
     height: 0;
     opacity: 0;
 
-    animation: fade-out 3s /*infinite*/;
+    animation: fade-out 2s /*infinite*/;
   }
 
   .splash-screen #shaka-splash {
-    --size: 150px;
+    --size: 180px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: var(--size);
 
-    animation: zoom-in 2s /*infinite*/;
-    animation-delay: 1s;
+    animation: wiggle 1s, zoom-in 2s /*infinite*/;
   }
 
   @keyframes zoom-in {
@@ -42,7 +41,7 @@ export default {
       width: calc(var(--size) * 0.9);
     }
     100% {
-      width: 250%;
+      width: 400%;
     }
   }
   @keyframes fade-out {
@@ -59,27 +58,11 @@ export default {
     }
   }
 
-  @-webkit-keyframes wiggle {
-    0% {-webkit-transform: rotate(10deg);}
-    25% {-webkit-transform: rotate(-10deg);}
-    50% {-webkit-transform: rotate(20deg);}
-    75% {-webkit-transform: rotate(-5deg);}
-    100% {-webkit-transform: rotate(0deg);}
-  }
-
-  @-ms-keyframes wiggle {
-    0% {-ms-transform: rotate(1deg);}
-    25% {-ms-transform: rotate(-1deg);}
-    50% {-ms-transform: rotate(1.5deg);}
-    75% {-ms-transform: rotate(-5deg);}
-    100% {-ms-transform: rotate(0deg);}
-  }
-
   @keyframes wiggle {
-    0% {transform: rotate(10deg);}
-    25% {transform: rotate(-10deg);}
-    50% {transform: rotate(20deg);}
-    75% {transform: rotate(-5deg);}
-    100% {transform: rotate(0deg);}
+    0% {transform: translate(-50%, -50%) rotate(10deg);}
+    25% {transform: translate(-50%, -50%) rotate(-10deg);}
+    50% {transform: translate(-50%, -50%) rotate(20deg);}
+    75% {transform: translate(-50%, -50%) rotate(-5deg);}
+    100% {transform: translate(-50%, -50%) rotate(0deg);}
   }
 </style>
