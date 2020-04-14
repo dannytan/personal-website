@@ -1,15 +1,18 @@
 <template>
   <div>
+    <SplashScreen></SplashScreen>
     <nuxt />
     <NavBar></NavBar>
   </div>
 </template>
 
 <script>
+import SplashScreen from '~/components/SplashScreen'
 import NavBar from '~/components/NavBar'
 
 export default {
   components: {
+    SplashScreen,
     NavBar
   },
   head () {
