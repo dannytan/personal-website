@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  margin: 40px 15% 80px 15%;
+  padding: 40px 15% 80px 15%;
   .page-section {
     padding: 30px 10px;
     overflow-y: scroll;
@@ -62,7 +62,7 @@ export default {
     display: none;
   }
   &.sm {
-    margin: 40px 10% 80px 10%;
+    padding: 40px 10% 80px 10%;
     .page-section {
       padding: 20px 10px;
       .about-text {
@@ -71,7 +71,7 @@ export default {
     }
   }
   &.xs {
-    margin: 40px 8% 60px 8%;
+    padding: 40px 8% 60px 8%;
     .page-section {
       padding: 20px 0;
       .bio-image-1 {

@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .works {
-  margin: 40px 15% 80px 15%;
+  padding: 40px 15% 80px 15%;
   text-align: center;
   h1 {
     margin-top: 30px;
