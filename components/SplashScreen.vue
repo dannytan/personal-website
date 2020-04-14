@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
   .splash-screen {
     z-index: 3;
-    background: #FF5475;
+    background: #FFFFFF;
     position: fixed;
     width: 100%;
     height: 0;
