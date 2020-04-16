@@ -50,6 +50,7 @@ export default {
       float: right;
     }
     .about-text {
+      font-family: 'Roboto Mono', monospace;
       font-size: 18px;
       line-height: 1.8;
       white-space: pre-line;
