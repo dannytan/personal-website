@@ -2,11 +2,9 @@
   <div
     class="image-card"
     :style="{ backgroundImage: `url(${ computedBackgroundImage })` }"
-    @mouseover="onMouseOver"
-    @mouseleave="onMouseLeave"
     @click="onClick">
-    <div v-if="isOnHover" class="overlay"></div>
-    <div v-if="isOnHover" class="card-title">
+    <div class="overlay"></div>
+    <div class="card-title">
       {{ title }}
     </div>
   </div>
@@ -25,23 +23,12 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      isOnHover: false
-    }
-  },
   computed: {
     computedBackgroundImage () {
       return require(`../assets/img/${this.backgroundImagePath}`)
     }
   },
   methods: {
-    onMouseOver () {
-      this.isOnHover = true
-    },
-    onMouseLeave () {
-      this.isOnHover = false
-    },
     onClick () {
       this.$emit('click')
     }
@@ -62,10 +49,12 @@ export default {
     cursor: pointer;
     .overlay {
       border-radius: 10px;
-      transition: opacity 300ms ease;
       background: linear-gradient(180deg, transparent 62%, rgba(0,0,0,0.00345888) 63.94%, rgba(0,0,0,0.014204) 65.89%, rgba(0,0,0,0.0326639) 67.83%, rgba(0,0,0,0.0589645) 69.78%, rgba(0,0,0,0.0927099) 71.72%, rgba(0,0,0,0.132754) 73.67%, rgba(0,0,0,0.177076) 75.61%, rgba(0,0,0,0.222924) 77.56%, rgba(0,0,0,0.267246) 79.5%, rgba(0,0,0,0.30729) 81.44%, rgba(0,0,0,0.341035) 83.39%, rgba(0,0,0,0.367336) 85.33%, rgba(0,0,0,0.385796) 87.28%, rgba(0,0,0,0.396541) 89.22%, rgba(0,0,0,0.4) 91.17%);
       height: 100%;
       width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 350ms linear;
     }
     .card-title {
       font-family: 'Roboto Mono', monospace;
@@ -74,6 +63,17 @@ export default {
       bottom: 15px;
       font-size: 18px;
       font-weight: bold;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 350ms linear;
+    }
+
+    &:hover {
+      .overlay,
+      .card-title {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
 </style>
