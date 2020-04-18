@@ -27,6 +27,16 @@
           ></ImageCard>
         </nuxt-link>
       </el-col>
+      <el-col :xs="24" :sm="12">
+        <nuxt-link to="/works/hacc">
+          <ImageCard
+            class="works-card"
+            title="HACC 2017"
+            background-image-path="works/hacc.png"
+            @click="cardClicked('hacc')"
+          ></ImageCard>
+        </nuxt-link>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -51,18 +61,21 @@ export default {
 
 <style lang="scss" scoped>
 .works {
-  padding: 40px 15% 80px 15%;
+  padding: 40px 15% 120px 15%;
   .works-card {
-    margin: 12px 0;
+    margin: 20px 0;
   }
   &.md {
-    padding: 40px 8% 80px 8%;
+    padding: 40px 8% 120px 8%;
   }
   &.sm {
-    padding: 40px 5% 80px 5%;
+    padding: 40px 5% 120px 5%;
   }
   &.xs {
-    padding: 40px 5% 80px 5%;
+    padding: 40px 5% 100px 5%;
+    .works-card {
+      margin: 12px 0;
+    }
   }
 }
 </style>
