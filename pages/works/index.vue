@@ -18,6 +18,14 @@
         </nuxt-link>
       </el-col>
       <el-col :xs="24" :sm="12">
+        <ImageCard
+          class="works-card"
+          title="@dantandrums"
+          background-image-path="works/dantandrums.png"
+          @click="dantandrumsClicked"
+        ></ImageCard>
+      </el-col>
+      <el-col :xs="24" :sm="12">
         <nuxt-link to="/works/dismango">
           <ImageCard
             class="works-card"
@@ -54,6 +62,9 @@ export default {
   methods: {
     cardClicked (card) {
       console.log(`${card} card was clicked`)
+    },
+    dantandrumsClicked () {
+      window.open('https://www.instagram.com/dantandrums/')
     }
   }
 }
