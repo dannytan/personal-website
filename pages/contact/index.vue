@@ -16,9 +16,6 @@
         </el-col>
         <el-col :xs="24" :md="10">
           <div class="contact-card-links">
-            <div class="email-text">
-              <b>Email:</b> dantan808[@]gmail[.]com
-            </div>
             <el-row :gutter="computedGutter">
               <el-col :span="12" class="image-container">
                 <img
@@ -53,6 +50,28 @@
         </el-col>
       </el-row>
     </div>
+    <el-form ref="form" :model="form" :rules="rules" class="contact-form">
+      <el-row :gutter="20">
+        <el-col :xs="24" :sm="12">
+          <el-form-item label="Name" prop="name">
+            <el-input v-model="form.name"></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :xs="24" :sm="12">
+          <el-form-item label="Email" prop="email">
+            <el-input v-model="form.email"></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-form-item label="Message" prop="message">
+        <el-input type="textarea" :autosize="{ minRows: 4 }" v-model="form.message"></el-input>
+      </el-form-item>
+      <el-form-item style="text-align: right">
+        <el-button class="send-button" :loading="messageSending" @click="submitForm('form')">
+          Send
+        </el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
@@ -64,12 +83,52 @@ export default {
   components: {
     PageTitle
   },
+  data () {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      rules: {
+        name: [
+          { required: true, message: 'Please input your name', trigger: 'blur' }
+        ],
+        email: [
+          { required: true, message: 'Please input your email address', trigger: 'blur' }
+        ],
+        message: [
+          { required: true, message: 'Message cannot be blank', trigger: 'blur' }
+        ]
+      },
+      messageSending: false
+    }
+  },
   computed: {
     computedGutter () {
       return this.$mq === 'xs' ? 20 : 40
     }
   },
   methods: {
+    formMessageBody () {
+      return {
+        name: this.form.name,
+        email: this.form.email,
+        message: this.form.message
+      }
+    },
+    submitForm (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          console.log('Submitting message!', this.formMessageBody())
+          // set messageSending to true
+          // send POST request with formMessageBody object
+          // on success, display success message
+          // on error, display error message
+          // finally, set messageSending to false
+        }
+      })
+    },
     goToGithub () {
       window.open('https://github.com/dannytan')
     },
@@ -89,10 +148,8 @@ export default {
 <style lang="scss" scoped>
 .contact {
   padding: 40px 15% 80px 15%;
-
   .contact-card {
-    font-family: 'Roboto Mono', monospace;
-    margin: 60px 0;
+    margin: 40px 0;
     box-shadow: 0 0 15px rgba(0,0,0,.15);
     border-radius: 15px;
     width: 100%;
@@ -102,12 +159,8 @@ export default {
     }
     .contact-card-links {
       padding: 20px;
-      .email-text {
-        text-align: center;
-        font-size: 1.2em;
-      }
       .image-container {
-        padding-top: 30px;
+        padding-top: 16px;
         img {
           cursor: pointer;
         }
@@ -140,6 +193,21 @@ export default {
         .image-container {
           padding-top: 15px;
         }
+      }
+    }
+  }
+  .contact-form {
+    font-family: 'Roboto Mono', monospace;
+    .send-button {
+      background-color: #B032FF;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+    }
+    /deep/ .el-input {
+      .el-input__inner {
+        font-family: inherit;
+        line-height: 1;
       }
     }
   }
