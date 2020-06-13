@@ -19,6 +19,7 @@
             <el-row :gutter="computedGutter">
               <el-col :span="12" class="image-container">
                 <img
+                  class="enlarge-on-hover"
                   style="width: 100%"
                   src="../../assets/img/contact/github.png"
                   alt="GitHub icon"
@@ -26,6 +27,7 @@
               </el-col>
               <el-col :span="12" class="image-container">
                 <img
+                  class="enlarge-on-hover"
                   style="width: 100%"
                   src="../../assets/img/contact/linkedin.png"
                   alt="LinkedIn icon"
@@ -33,6 +35,7 @@
               </el-col>
               <el-col :span="12" class="image-container">
                 <img
+                  class="enlarge-on-hover"
                   style="width: 100%"
                   src="../../assets/img/contact/instagram.png"
                   alt="Instagram icon"
@@ -40,6 +43,7 @@
               </el-col>
               <el-col :span="12" class="image-container">
                 <img
+                  class="enlarge-on-hover"
                   style="width: 100%"
                   src="../../assets/img/contact/facebook.png"
                   alt="Facebook icon"
@@ -67,7 +71,7 @@
         <el-input type="textarea" :autosize="{ minRows: 4 }" v-model="form.message"></el-input>
       </el-form-item>
       <el-form-item style="text-align: right">
-        <el-button class="send-button" :loading="messageSending" @click="submitForm('form')">
+        <el-button class="send-button enlarge-on-hover" :loading="messageSending" @click="submitForm('form')">
           Send
         </el-button>
       </el-form-item>
@@ -120,12 +124,23 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          console.log('Submitting message!', this.formMessageBody())
-          // set messageSending to true
-          // send POST request with formMessageBody object
-          // on success, display success message
-          // on error, display error message
-          // finally, set messageSending to false
+          this.messageSending = true
+          this.$axios.$post('https://nnxvv3dmp6.execute-api.us-west-2.amazonaws.com/dev/contact', this.formMessageBody())
+            .then((response) => {
+              this.$notify.success({
+                title: 'Success',
+                message: response.message
+              })
+            })
+            .catch((err) => {
+              this.$notify.error({
+                title: 'Error',
+                message: err.message
+              })
+            })
+            .finally(() => {
+              this.messageSending = false
+            })
         }
       })
     },
