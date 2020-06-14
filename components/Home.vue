@@ -1,15 +1,17 @@
 <template>
   <div class="home">
     <div class="title-wrapper">
-      <div class="title" :class="$mq">
+      <div v-scroll-reveal="{distance: '15px', delay: 200}" class="title" :class="$mq">
         DANIEL TAN
       </div>
-      <div class="sub-title">
+      <div v-scroll-reveal="{distance: '15px', delay: 400}" class="sub-title">
         Developer // Drummer
       </div>
-      <el-button class="enter-button" @click="contactMe">
-        CONTACT ME
-      </el-button>
+      <nuxt-link v-scroll-reveal="{distance: '15px', delay: 600}" to="/contact">
+        <el-button class="contact-button">
+          CONTACT ME
+        </el-button>
+      </nuxt-link>
     </div>
     <div class="heart"></div>
     <img src="~/assets/img/home.png" alt="home" class="home-img" :class="$mq"/>
@@ -33,9 +35,6 @@ export default {
     clearInterval(this.interval)
   },
   methods: {
-    contactMe () {
-      window.location.href = 'mailto:dantan808@gmail.com'
-    },
     createColor () {
       return Math.round(245 * Math.random()) + ', ' + Math.round(245 * Math.random()) + ', ' + Math.round(245 * Math.random())
     }
@@ -64,7 +63,7 @@ export default {
         color: rgba(255, 255, 255, 0.8);
         font-size: 24px;
       }
-      .enter-button {
+      .contact-button {
         margin-top: 15px;
         font-weight: bold;
         background: transparent;

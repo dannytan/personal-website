@@ -1,6 +1,7 @@
 <template>
   <div class="works" :class="$mq">
     <PageTitle
+      v-scroll-reveal="{origin: 'top', distance: '50px', delay: 200}"
       title="Works"
       background-color="#70D6FF"
       box-shadow-color="rgba(112, 214, 255, 0.4)"
@@ -10,6 +11,7 @@
       <el-col :xs="24" :sm="12">
         <nuxt-link to="/works/personal-website">
           <ImageCard
+            v-scroll-reveal="{distance: '10px', delay: 200}"
             class="works-card"
             title="This Website"
             background-image-path="works/personal-website.png"
@@ -19,6 +21,7 @@
       </el-col>
       <el-col :xs="24" :sm="12">
         <ImageCard
+          v-scroll-reveal="{distance: '10px', delay: 200}"
           class="works-card"
           title="@dantandrums"
           background-image-path="works/dantandrums.png"
@@ -28,6 +31,7 @@
       <el-col :xs="24" :sm="12">
         <nuxt-link to="/works/dismango">
           <ImageCard
+            v-scroll-reveal="{distance: '10px', delay: 200}"
             class="works-card"
             title="dis•mango"
             background-image-path="works/dismango.png"
@@ -38,6 +42,7 @@
       <el-col :xs="24" :sm="12">
         <nuxt-link to="/works/hacc">
           <ImageCard
+            v-scroll-reveal="{distance: '10px', delay: 200}"
             class="works-card"
             title="HACC 2017"
             background-image-path="works/hacc.png"

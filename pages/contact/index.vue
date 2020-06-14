@@ -1,12 +1,13 @@
 <template>
   <div class="contact">
     <PageTitle
+      v-scroll-reveal="{origin: 'top', distance: '50px', delay: 200}"
       title="Contact Me"
       background-color="#B032FF"
       box-shadow-color="rgba(176, 50, 255, 0.4)"
       font-color="#fff"
     ></PageTitle>
-    <div class="contact-card" :class="$mq">
+    <div v-scroll-reveal="{distance: '10px', delay: 200}" class="contact-card" :class="$mq">
       <el-row>
         <el-col :xs="24" :md="14">
           <img
@@ -54,7 +55,7 @@
         </el-col>
       </el-row>
     </div>
-    <el-form ref="form" :model="form" :rules="rules" class="contact-form">
+    <el-form ref="form" v-scroll-reveal="{distance: '10px', delay: 500}" :model="form" :rules="rules" class="contact-form">
       <el-row :gutter="20">
         <el-col :xs="24" :sm="12">
           <el-form-item label="Name" prop="name">

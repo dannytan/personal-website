@@ -1,6 +1,7 @@
 <template>
   <div class="blog" :class="$mq">
     <PageTitle
+      v-scroll-reveal="{origin: 'top', distance: '50px', delay: 200}"
       title="Blog"
       background-color="#5DEFA1"
       box-shadow-color="rgba(93, 239, 161, 0.4)"
