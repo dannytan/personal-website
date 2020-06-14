@@ -9,6 +9,15 @@
     ></PageTitle>
     <el-row gutter="40" style="margin-top: 60px;">
       <el-col :xs="24" :sm="12">
+        <ImageCard
+          v-scroll-reveal="{distance: '10px', delay: 200}"
+          class="works-card"
+          title="Seeleb - AI Celebrity Identifier"
+          background-image-path="works/seeleb.png"
+          @click="seelebClicked"
+        ></ImageCard>
+      </el-col>
+      <el-col :xs="24" :sm="12">
         <nuxt-link to="/works/personal-website">
           <ImageCard
             v-scroll-reveal="{distance: '10px', delay: 200}"
@@ -67,6 +76,9 @@ export default {
   methods: {
     cardClicked (card) {
       console.log(`${card} card was clicked`)
+    },
+    seelebClicked () {
+      window.open('https://seeleb.com')
     },
     dantandrumsClicked () {
       window.open('https://www.instagram.com/dantandrums/')
