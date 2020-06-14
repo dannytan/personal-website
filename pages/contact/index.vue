@@ -219,12 +219,6 @@ export default {
       border: none;
       font-weight: bold;
     }
-    /deep/ .el-input {
-      .el-input__inner {
-        font-family: inherit;
-        line-height: 1;
-      }
-    }
   }
 }
 </style>
