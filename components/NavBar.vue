@@ -13,9 +13,9 @@
         <i v-if="isMobile" class="el-icon-suitcase"></i>
         <span v-else>WORKS</span>
       </li>
-      <li :class="{ active: isBlogActive }" @click="goTo('/blog')">
-        <i v-if="isMobile" class="el-icon-edit-outline"></i>
-        <span v-else>BLOG</span>
+      <li :class="{ active: isResourcesActive }" @click="goTo('/resources')">
+        <i v-if="isMobile" class="el-icon-collection"></i>
+        <span v-else>RESOURCES</span>
       </li>
       <li :class="{ active: isContactActive }" @click="goTo('/contact')">
         <i v-if="isMobile" class="el-icon-message"></i>
@@ -45,8 +45,8 @@ export default {
     isWorksActive () {
       return this.activeTab === '/works'
     },
-    isBlogActive () {
-      return this.activeTab === '/blog'
+    isResourcesActive () {
+      return this.activeTab === '/resources'
     },
     isContactActive () {
       return this.activeTab === '/contact'

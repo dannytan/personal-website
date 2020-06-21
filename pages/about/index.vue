@@ -55,6 +55,7 @@ export default {
       font-size: 18px;
       line-height: 1.8;
       white-space: pre-line;
+      hyphens: auto;
       .link {
         color: inherit;
       }
