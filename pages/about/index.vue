@@ -1,12 +1,13 @@
 <template>
   <div class="about" :class="$mq">
     <PageTitle
+      v-scroll-reveal="{origin: 'top', distance: '50px', delay: 200}"
       title="About Dan"
       background-color="#FF5475"
       box-shadow-color="rgba(255, 84, 117, 0.4)"
       font-color="#fff"
     ></PageTitle>
-    <div class="page-section">
+    <div v-scroll-reveal="{distance: '10px', delay: 200}" class="page-section">
       <div class="about-text">
         Daniel is a <b>full-stack software developer</b> based out of <b>Honolulu, HI</b> with a strong foundation in engineering principles across multiple platforms and technologies.  He has a passion for writing, testing, debugging code, and designing user interfaces. Daniel is self-driven and able to quickly learn and master new technologies, while being successful in both team and independent environments.<br/>
         In 2018, Daniel graduated magna cum laude with a <b>B.S. in Computer Science</b> from the <b>University of Hawaiʻi at Mānoa</b>.  He currently works as a software engineer for <a class="link" href="https://www.datahouse.com" target="_blank"><b>DataHouse</b></a>, building enterprise-level applications using mostly <b>#Node.js</b>, <b>#JavaScript</b>, <b>#Vue.js</b>, <b>#SQL</b>, <b>#Jenkins</b>, and <b>#AWS</b>. A recently certified <b>AWS Certified Cloud Practitioner</b>, Daniel is also working toward becoming an <b>AWS Certified Developer Associate</b> in the near future.<br/>
@@ -54,6 +55,7 @@ export default {
       font-size: 18px;
       line-height: 1.8;
       white-space: pre-line;
+      hyphens: auto;
       .link {
         color: inherit;
       }

@@ -17,6 +17,8 @@ $ npm run generate
 
 For this project, I used Nuxt, a progressive framework based on Vue.js.  For more information and detailed explanation on how things work, check out the [Nuxt.js docs](https://nuxtjs.org).
 
+The backend for the contact form was built using the Serverless Framework, integrating AWS SES (Simple Email Service) via the AWS JavaScript SDK.
+
 Hosted on AWS using S3 (Simple Storage Service) and CloudFront (CDN). And Jenkins for automated deployments!
 
 Mahalo for checking it out! :v:

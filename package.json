@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "element-ui": "^2.4.11",
     "nuxt": "^2.0.0",
-    "nuxt-mq": "^2.0.1"
+    "nuxt-mq": "^2.0.1",
+    "vue-scroll-reveal": "^1.0.11"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
