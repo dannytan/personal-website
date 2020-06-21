@@ -59,6 +59,17 @@
           ></ImageCard>
         </nuxt-link>
       </el-col>
+      <el-col :xs="24" :sm="12">
+        <nuxt-link to="/works/living-with-you">
+          <ImageCard
+            v-scroll-reveal="{distance: '10px', delay: 200}"
+            class="works-card"
+            title="Living with You"
+            background-image-path="works/living-with-you.jpeg"
+            @click="cardClicked('living with you')"
+          ></ImageCard>
+        </nuxt-link>
+      </el-col>
     </el-row>
   </div>
 </template>
